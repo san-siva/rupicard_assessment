@@ -20,7 +20,6 @@ const Home = () => {
 
 	const handleSubmit = async () => {
 		toggleError(true);
-		console.log(!isLoading && name.length && phone.length === 10);
 		if (!isLoading && name.length && phone.length === 10) {
 			toggleLoading(true);
 		}
