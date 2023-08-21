@@ -22,6 +22,7 @@ const Home = () => {
 		toggleError(true);
 		if (!isLoading && name.length && phone.length === 10) {
 			toggleLoading(true);
+      // NOTE: Add your API call here
 		}
 	};
 
