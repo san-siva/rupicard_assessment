@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import './styles.scss';
 
 type Props = {
-  showCharacterLimit?: boolean;
   isPhone?: boolean;
   isErrorEnabled?: boolean;
   isRequired?: boolean;
@@ -18,7 +17,6 @@ type Props = {
 
 const TextInput = ({
   isDisabled = false,
-  showCharacterLimit = false,
   isPhone = false,
   isErrorEnabled: defaultErrorState = false,
   isRequired = false,
