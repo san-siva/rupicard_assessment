@@ -13,9 +13,11 @@ type Props = {
   placeholder?: string;
   value?: string;
   onChange?: (value: string, id?: string) => void;
+  isDisabled?: boolean;
 };
 
 const TextInput = ({
+  isDisabled = false,
   showCharacterLimit = false,
   isPhone = false,
   isErrorEnabled: defaultErrorState = false,
@@ -43,6 +45,7 @@ const TextInput = ({
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    if (isDisabled) return;
     const { value } = e.target;
     const sanitizedVal = isPhone ? value.replace(/\D/g, '') : value;
     if (characterLimit === 0 || sanitizedVal.length <= characterLimit) {
@@ -62,11 +65,6 @@ const TextInput = ({
             <span className={`bold ${isErrorEnabled ? 'error' : ''}`}>*</span>
           )}
         </>
-        <cite className="bold">
-          {characterLimit > 0 && showCharacterLimit
-            ? `${value.length} / ${characterLimit}`
-            : ''}
-        </cite>
       </div>
       <input
         tabIndex={0}
