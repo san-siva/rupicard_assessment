@@ -1,0 +1,50 @@
+@import '../../styles/index.scss';
+
+.textinput {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.textinput-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
+	line-height: 1.57;
+	margin-bottom: 5px;
+}
+
+.textinput-header > cite {
+	margin-left: auto;
+}
+
+.textinput > input {
+	padding: 11px 12px;
+	width: calc(100% - 24px - 2px);
+	border-radius: 5px;
+	border: solid 1px $border-color;
+	background-color: $background-color-base;
+
+	line-height: 1.57;
+
+	transition: 0.3s ease-in all;
+}
+
+.textinput > input:focus {
+	border-color: $background-color-secondary;
+	box-shadow: 0 3px 6px 0 rgba(255, 152, 77, 0.12);
+}
+
+.textinput > input::placeholder {
+	color: $color-dark-3;
+	opacity: 0.4;
+}
+
+.textinput-error > input {
+	border: solid 1px $background-color-error;
+}
